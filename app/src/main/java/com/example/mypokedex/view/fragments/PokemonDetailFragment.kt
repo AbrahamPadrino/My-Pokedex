@@ -1,4 +1,4 @@
-package com.example.mypokedex
+package com.example.mypokedex.view.fragments
 
 import android.graphics.drawable.Drawable
 import android.media.MediaPlayer
@@ -17,9 +17,12 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.example.mypokedex.R
+import com.example.mypokedex.data.entities.Pokemon
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class PokemonDetailFragment : Fragment() {
     //recibir argumentos
     private val args: PokemonDetailFragmentArgs by navArgs()

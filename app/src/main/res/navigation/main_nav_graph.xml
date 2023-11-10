@@ -7,11 +7,11 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.mypokedex.ListFragment"
+        android:name="com.example.mypokedex.view.fragments.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
-            android:id="@+id/action_listFragment_to_pokemonDetailFragment"
+            android:id="@+id/goToPokemonDetail"
             app:destination="@id/pokemonDetailFragment"
             app:enterAnim="@anim/enter_from_right"
             app:exitAnim="@anim/exit_to_left"
@@ -22,12 +22,12 @@
     </fragment>
     <fragment
         android:id="@+id/pokemonDetailFragment"
-        android:name="com.example.mypokedex.PokemonDetailFragment"
+        android:name="com.example.mypokedex.view.fragments.PokemonDetailFragment"
         android:label="fragment_pokemon_detail"
         tools:layout="@layout/fragment_pokemon_detail" >
         <argument
             android:name="pokemon"
-            app:argType="com.example.mypokedex.Pokemon"
+            app:argType="com.example.mypokedex.data.entities.Pokemon"
             />
     </fragment>
 </navigation>
