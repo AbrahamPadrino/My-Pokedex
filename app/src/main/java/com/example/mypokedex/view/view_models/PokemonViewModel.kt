@@ -14,15 +14,16 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PokemonViewModel
-    @Inject constructor(
-        private val pokemonUseCase: PokemonUseCase
-    ): ViewModel() {
+@Inject constructor(
+    private val pokemonUseCase: PokemonUseCase
+) : ViewModel() {
 
-    private val _liveData : MutableLiveData<List<Pokemon>> = MutableLiveData<List<Pokemon>>()
-    val liveData : LiveData<List<Pokemon>> get() = _liveData
+    private val _liveData: MutableLiveData<List<Pokemon>> = MutableLiveData<List<Pokemon>>()
+    val liveData: LiveData<List<Pokemon>> get() = _liveData
 
-    private val _liveDataPokemonResponse : MutableLiveData<PokemonResponse> = MutableLiveData<PokemonResponse>()
-    val liveDataPokemonResponse : LiveData<PokemonResponse> get() = _liveDataPokemonResponse
+    private val _liveDataPokemonResponse: MutableLiveData<PokemonResponse> =
+        MutableLiveData<PokemonResponse>()
+    val liveDataPokemonResponse: LiveData<PokemonResponse> get() = _liveDataPokemonResponse
 
 
     fun getPokemonList() {
@@ -31,6 +32,7 @@ class PokemonViewModel
             _liveData.postValue(pokemonUseCase.getPokemonList())
         }
     }
+
     fun getPokemonListV2() {
         viewModelScope.launch(Dispatchers.IO) {
 

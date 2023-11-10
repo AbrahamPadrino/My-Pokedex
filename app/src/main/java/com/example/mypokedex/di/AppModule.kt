@@ -14,6 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
@@ -40,7 +41,8 @@ object AppModule {
     @Provides
     fun provideGson(): Gson = GsonBuilder().create()
 
-//    @Provides
-//    fun providesPokemonApiService(retrofit: Retrofit): PokemonApiService = retrofit.create(PokemonApiService::class.java)
+    @Provides
+    fun providesPokemonApiService(retrofit: Retrofit): PokemonService =
+        retrofit.create(PokemonService::class.java)
 
 }

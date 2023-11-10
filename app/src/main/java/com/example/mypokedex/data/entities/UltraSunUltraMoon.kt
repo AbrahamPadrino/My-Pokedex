@@ -1,4 +1,4 @@
-package com.example.mypokedex.data
+package com.example.mypokedex.data.entities
 
 data class UltraSunUltraMoon(
     val front_default: String,

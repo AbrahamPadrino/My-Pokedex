@@ -17,7 +17,9 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.mypokedex.R
 import com.example.mypokedex.data.entities.Pokemon
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailFragment : Fragment() {
 
     private lateinit var imageView: ImageView
@@ -49,7 +51,7 @@ class DetailFragment : Fragment() {
     fun setPokemon(pokemon: Pokemon) {
         loadingWheel.visibility = View.VISIBLE
         //Manejando errores de cargado de imagen con Glide
-        Glide.with(this).load(pokemon.imageUrl).listener(object: RequestListener<Drawable>{
+        Glide.with(this).load(pokemon.imageUrl).listener(object : RequestListener<Drawable> {
             override fun onLoadFailed(
                 e: GlideException?,
                 model: Any?,
